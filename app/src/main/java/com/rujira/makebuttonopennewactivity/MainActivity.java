@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String EXTRA_TEXT = "com.rujira.makebuttonopennewactivity.EXTRA_TEXT";
+    public static final String EXTRA_NUMBER = "com.rujira.makebuttonopennewactivity.EXTRA_NUMBER";
 
     Button btnOpenActivity;
     EditText et1;
@@ -45,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         int number = Integer.parseInt(et2.getText().toString());
 
         Intent intent = new Intent(this, SecondActivity.class);
+        intent.putExtra(EXTRA_TEXT, text);
+        intent.putExtra(EXTRA_NUMBER, number);
         startActivity(intent);
 
     }
